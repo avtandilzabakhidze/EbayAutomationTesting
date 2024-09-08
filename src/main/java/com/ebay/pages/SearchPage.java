@@ -10,24 +10,49 @@ public class SearchPage extends BasePage {
     private By searchInput = By.id("gh-ac");
     private By submitButton = By.id("gh-btn");
     private By findProducts = By.xpath("//li[contains(@id,'item')]");
-    private By productTitle = By.xpath("//li[contains(@id,'item')]//span[@role=\"heading\"]");
+    private By errorMessage = By.xpath("//div[@class ='s-error']");
 
     public SearchPage(WebDriver driver) {
         super(driver);
     }
 
-    public List<WebElement> searchFirstFiveResult(String text) {
-        driver.findElement(searchInput).sendKeys(text);
-        driver.findElement(submitButton).click();
-        List<WebElement> products = driver.findElements(findProducts);
+    public boolean searchButtonPresence() {
+        find(searchInput).clear();
+        return find(searchInput).isDisplayed();
+    }
 
-        for (int i = 0; i < Math.min(5, products.size()); i++) {
-            WebElement product = products.get(i);
+    public boolean submitButtonIsPresence() {
+        find(searchInput).clear();
+        return find(searchInput).isDisplayed();
+    }
 
-            WebElement titleElement = product.findElement(productTitle);
-            String title = titleElement.getText();
-        }
+    public int searchElementSize(String text) {
+        find(searchInput).clear();
+        find(searchInput).sendKeys(text);
+        find(submitButton).click();
+        List<WebElement> products = findElements(findProducts);
+        return products.size();
+    }
 
-        return products;
+    public boolean searchMaxQuerySize(String text) {
+        find(searchInput).clear();
+        find(searchInput).sendKeys(text);
+        find(submitButton).click();
+        waitForVisibility(errorMessage);
+        String resultText = getText(errorMessage);
+        boolean contains = resultText.contains("Let's try that again.");
+
+        return contains;
+    }
+
+    public boolean searchMinQuerySize(String text) {
+        find(searchInput).clear();
+        find(searchInput).sendKeys(text);
+        find(submitButton).click();
+        waitForVisibility(errorMessage);
+        String resultText = getText(errorMessage);
+        boolean contains = resultText.contains("Let's try that again.");
+
+        return contains;
     }
 }
