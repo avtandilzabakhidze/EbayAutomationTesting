@@ -46,4 +46,7 @@ public class BasePage {
     public WebElement waitForVisibility(By locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
+    public void waitForUrlToChange(String oldUrl) {
+        wait.until(ExpectedConditions.urlToBe(oldUrl));
+    }
 }
