@@ -3,8 +3,11 @@
 <suite name="Annotations">
     <test name="Run Class Annotations">
         <classes>
-            <class name="CardPageTest"/>
-            <class name="SearchPageTest"/>
+            <class name="CardTest"/>
+            <class name="DailyDealsTest"/>
+            <class name="LanguageTest"/>
+            <class name="SearchTest"/>
+            <class name="SocialNetworkTest"/>
         </classes>
     </test>
 </suite>
