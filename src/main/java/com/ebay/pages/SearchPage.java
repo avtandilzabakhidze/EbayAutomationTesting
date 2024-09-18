@@ -7,10 +7,12 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class SearchPage extends BasePage {
-    private By searchInput = By.id("gh-ac");
-    private By submitButton = By.id("gh-btn");
-    private By findProducts = By.xpath("//li[contains(@id,'item')]");
-    private By errorMessage = By.xpath("//div[@class ='s-error']");
+    private final By searchInput = By.id("gh-ac");
+    private final By submitButton = By.id("gh-btn");
+    private final By findProducts = By.xpath("//li[contains(@id,'item')]");
+    private final By errorMessage = By.xpath("//div[@class ='s-error']");
+    private final By advancedSearchButton = By.linkText("Advanced");
+    private final By advancedSearchProduct= By.id("_nkw");
 
     public SearchPage(WebDriver driver) {
         super(driver);
@@ -54,5 +56,11 @@ public class SearchPage extends BasePage {
         boolean contains = resultText.contains("Let's try that again.");
 
         return contains;
+    }
+
+    //Advanced search
+    public void testAdvancedSearch() {
+        find(advancedSearchButton).click();
+
     }
 }

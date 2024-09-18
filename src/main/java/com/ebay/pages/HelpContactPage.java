@@ -4,10 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class HelpContactPage extends BasePage {
-    private By sellerInformationCenter = By.linkText("Seller Information Center");
-    private By sellerMessage = By.xpath("//div[@class=\"text\"]//h1");
-    private By contactUs = By.linkText("Contact us");
-    private By contactMessage = By.id("srTil");
+    private final By sellerInformationCenter = By.linkText("Seller Information Center");
+    private final By sellerMessage = By.xpath("//div[@class=\"text\"]//h1");
+    private final By contactUs = By.linkText("Contact us");
+    private final By contactMessage = By.id("srTil");
 
     public HelpContactPage(WebDriver driver) {
         super(driver);

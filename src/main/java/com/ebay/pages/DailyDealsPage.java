@@ -5,8 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DailyDealsPage extends BasePage{
-    private By dealsButton = By.linkText("Daily Deals");
-    private By dealProductImg = By.xpath("//div[@class=\"ebayui-dne-summary-card__wrapper\"]//img");
+    private final By dealsButton = By.linkText("Daily Deals");
+    private final By dealProductImg = By.xpath("//div[@class=\"ebayui-dne-summary-card__wrapper\"]//img");
 
     public DailyDealsPage(WebDriver driver) {
         super(driver);

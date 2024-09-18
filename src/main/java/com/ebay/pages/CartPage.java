@@ -10,13 +10,13 @@ import java.util.List;
 import java.util.Set;
 
 public class CartPage extends BasePage {
-    private By addedProductNumber = By.id("gh-cart-n");
-    private By cart = By.id("gh-minicart-hover");
-    private By searchInput = By.id("gh-ac");
-    private By submitButton = By.id("gh-btn");
-    private By findProducts = By.xpath("//li[contains(@id,'item')]");
-    private By productTitle = By.xpath("//li[contains(@id,'item')]//span[@role='heading']");
-    private By addToCart = By.id("atcBtn_btn_1");
+    private final By addedProductNumber = By.id("gh-cart-n");
+    private final By cart = By.id("gh-minicart-hover");
+    private final By searchInput = By.id("gh-ac");
+    private final By submitButton = By.id("gh-btn");
+    private final By findProducts = By.xpath("//li[contains(@id,'item')]");
+    private final By productTitle = By.xpath("//li[contains(@id,'item')]//span[@role='heading']");
+    private final By addToCart = By.id("atcBtn_btn_1");
 
     public CartPage(WebDriver driver) {
         super(driver);

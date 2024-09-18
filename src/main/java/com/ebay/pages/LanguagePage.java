@@ -6,10 +6,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 public class LanguagePage extends BasePage {
-    private By languageSelector = By.id("gf-fbtn");
-    private By ArgLanguage = By.xpath("//div[@id ='gf-f']//li//p[text() ='Argentina']");
-    private By AustrLanguage = By.xpath("//div[@id ='gf-f']//li//p[text() ='Australia']");
-    private By IrlLanguage = By.xpath("//div[@id ='gf-f']//li//p[text() ='Ireland']");
+    private final By languageSelector = By.id("gf-fbtn");
+    private final By ArgLanguage = By.xpath("//div[@id ='gf-f']//li//p[text() ='Argentina']");
+    private final By AustrLanguage = By.xpath("//div[@id ='gf-f']//li//p[text() ='Australia']");
+    private final By IrlLanguage = By.xpath("//div[@id ='gf-f']//li//p[text() ='Ireland']");
     private Actions actions = new Actions(driver);
 
     public LanguagePage(WebDriver driver) {

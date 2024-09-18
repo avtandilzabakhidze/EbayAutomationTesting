@@ -7,9 +7,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class SocialNetworkPage extends BasePage {
-    private By blog = By.linkText("eBay's Blogs");
-    private By facebook = By.linkText("Facebook");
-    private By twitter = By.linkText("Twitter");
+    private final By blog = By.linkText("eBay's Blogs");
+    private final By facebook = By.linkText("Facebook");
+    private final By twitter = By.linkText("Twitter");
     private WebDriverWait wait;
 
     public SocialNetworkPage(WebDriver driver) {
