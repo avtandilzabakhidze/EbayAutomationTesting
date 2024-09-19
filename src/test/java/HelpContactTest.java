@@ -1,4 +1,4 @@
-import com.ebay.pages.HelpContactPage;
+import com.ebay.actions.HelpContactAction;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,13 +9,13 @@ import org.testng.annotations.Test;
 
 public class HelpContactTest {
     private WebDriver driver;
-    private HelpContactPage helpContact;
+    private HelpContactAction helpContact;
 
     @BeforeMethod
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        helpContact = new HelpContactPage(driver);
+        helpContact = new HelpContactAction(driver);
         driver.get("https://www.ebay.com/");
         driver.manage().window().maximize();
     }

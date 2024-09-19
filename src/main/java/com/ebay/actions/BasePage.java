@@ -1,4 +1,4 @@
-package com.ebay.pages;
+package com.ebay.actions;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

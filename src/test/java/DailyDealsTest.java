@@ -1,5 +1,4 @@
-import com.ebay.pages.DailyDealsPage;
-import com.ebay.pages.SearchPage;
+import com.ebay.actions.DailyDealsAction;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,13 +9,13 @@ import org.testng.annotations.Test;
 
 public class DailyDealsTest {
     private WebDriver driver;
-    private DailyDealsPage dailyDealsPage;
+    private DailyDealsAction dailyDeals;
 
     @BeforeClass
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        dailyDealsPage = new DailyDealsPage(driver);
+        dailyDeals = new DailyDealsAction(driver);
         driver.manage().window().maximize();
         driver.get("https://www.ebay.com");
     }
@@ -28,7 +27,7 @@ public class DailyDealsTest {
 
     @Test
     public void dailyDealsTest() {
-        boolean isDisplayed = dailyDealsPage.dealProductVisibility();
+        boolean isDisplayed = dailyDeals.dealProductVisibility();
         Assert.assertTrue(isDisplayed,"\n Daily Deals Page is displayed \n");
     }
 }
