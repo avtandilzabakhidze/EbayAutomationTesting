@@ -1,5 +1,6 @@
 package com.ebay.actions;
 
+import com.ebay.exception.ElementNotFoundException;
 import com.ebay.pages.CartPage;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -62,9 +63,8 @@ public class CartAction extends BasePage{
         String addedNumber = getText(addedProductNumber);
         try {
             return Integer.parseInt(addedNumber);
-        } catch (NumberFormatException e) {
-            System.err.println("Cart count could not be parsed: " + addedNumber);
-            return 0;
+        } catch (ElementNotFoundException e) {
+           throw new ElementNotFoundException("\n Element not found \n");
         }
     }
 }

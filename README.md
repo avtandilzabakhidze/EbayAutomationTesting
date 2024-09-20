@@ -1,6 +1,6 @@
 # EbayAutomationTesting
 
-Welcome to the **EbayAutomationTesting** repository! This project is designed to automate testing for the eBay website using Java, Selenium, and the Page Object Model (POM). This setup ensures a robust, scalable, and maintainable test suite.
+Welcome to the **EbayAutomationTesting** repository! This project is designed to automate testing for the eBay website using Java, Selenium, and the Page Object Model (POM). This setup ensures a robust, scalable and maintainable test suite.
 
 ## Project Overview
 
