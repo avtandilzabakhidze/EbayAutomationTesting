@@ -8,6 +8,8 @@
             <class name="LanguageTest"/>
             <class name="SearchTest"/>
             <class name="SocialNetworkTest"/>
+            <class name="HelpContactTest"/>
+            <class name="RegistrationTest"/>
         </classes>
     </test>
 </suite>
